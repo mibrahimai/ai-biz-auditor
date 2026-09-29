@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 AI Business Process Auditor
+
+> Answer 8 questions about your business → Get a free AI-powered automation audit report with your top 3 automation opportunities, time savings, recommended tools, and a downloadable PDF.
+
+**Built with:** Next.js 15 · TypeScript · Gemini 1.5 Flash (free tier) · jsPDF  
+**Live demo:** [ai-biz-auditor.vercel.app](https://ai-biz-auditor.vercel.app) *(coming soon)*
+
+![screenshot](docs/screenshot.png)
+
+---
+
+## What It Does
+
+Most businesses waste 5–15 hours/week on manual tasks they don't realize can be automated. This tool acts as an **AI automation consultant** — it analyzes your workflows and produces a structured report identifying:
+
+- ✅ **Top 3 automation opportunities** ranked by priority
+- ⏱ **Time saved per week** for each opportunity  
+- 🛠 **Exact tools to use** (n8n, Zapier, Supabase, etc.)
+- 💰 **ROI statement** for each automation
+- ⚡ **3 quick wins** you can do today for free
+- 🏗 **Recommended tech stack** for your business size
+- 📄 **Downloadable PDF report** to share with your team
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/mikkh/ai-biz-auditor.git
+cd ai-biz-auditor
+npm install
+```
+
+### 2. Get a free Gemini API key
+
+1. Go to [aistudio.google.com](https://aistudio.google.com)
+2. Sign in with Google (free, no credit card)
+3. Click **Get API Key** → Create API key
+4. Copy the key
+
+### 3. Set up environment
+
+```bash
+cp .env.local.example .env.local
+```
+
+Open `.env.local` and paste your key:
+
+```
+GEMINI_API_KEY=AIza...your_key_here
+```
+
+### 4. Run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — fill the form and get your report.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+| Layer | Tech |
+|-------|------|
+| Frontend | Next.js 15 App Router, TypeScript |
+| Styling | Vanilla CSS (dark glassmorphism) |
+| AI | Google Gemini 1.5 Flash (free) |
+| PDF | jsPDF |
+| Deploy | Vercel (free tier) |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel (free)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm i -g vercel
+vercel --prod
+```
 
-## Deploy on Vercel
+Add `GEMINI_API_KEY` to your Vercel project environment variables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Why I Built This
+
+I kept seeing Upwork clients post "AI automation consultant needed" jobs where the first thing they needed was someone to *identify* what to automate before building anything. This tool is that discovery phase — free and instant.
+
+---
+
+## License
+
+MIT
